@@ -6,6 +6,12 @@ data/processed/*
 
 # Common data formats
 *.csv
+!data/processed/splits/X_train.csv
+!data/processed/splits/X_test.csv
+!data/processed/splits/Y_train.csv
+!data/processed/splits/Y_test.csv
+!data/processed/splits/X_val.csv
+!data/processed/splits/Y_val.csv
 *.xlsx
 *.xls
 *.parquet
