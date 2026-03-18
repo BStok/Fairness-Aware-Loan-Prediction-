@@ -18,6 +18,10 @@ from sklearn.metrics import (
 )
 from sklearn.pipeline import Pipeline
 from sklearn.impute import SimpleImputer
+import os
+
+OUTPUT_DIR = "result/baseline"
+os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 X_TRAIN_PATH = r"C:\Users\hp\OneDrive\Desktop\ML Project1\Fairness-Aware-Loan-Prediction-\notebooks\X_train.csv"
 X_VAL_PATH   = r"C:\Users\hp\OneDrive\Desktop\ML Project1\Fairness-Aware-Loan-Prediction-\notebooks\X_val.csv"
@@ -158,7 +162,7 @@ axes[1, 1].set(title="Top-20 Feature Coefficients\n(Blue = Positive  |  Red = Ne
 axes[1, 1].invert_yaxis(); axes[1, 1].grid(axis="x", alpha=0.3)
 
 plt.tight_layout()
-plt.savefig("loan_approval_diagnostics.png", dpi=150, bbox_inches="tight")
+plt.savefig(f"{OUTPUT_DIR}/loan_approval_diagnostics.png", dpi=150, bbox_inches="tight")
 print("\nDiagnostic plot saved  →  loan_approval_diagnostics.png")
 plt.show()
 
@@ -166,5 +170,5 @@ pred_df = X_test.copy()
 pred_df["actual"]               = y_test.values
 pred_df["approval_probability"] = y_test_prob.round(4)
 pred_df["predicted_decision"]   = np.where(y_test_pred == 1, "Approved", "Rejected")
-pred_df.to_csv("loan_predictions.csv", index=False)
+pred_df.to_csv(f"{OUTPUT_DIR}/loan_predictions.csv", index=False)
 print("Predictions saved      →  loan_predictions.csv")
