@@ -6,10 +6,12 @@
 
 ## Table of Contents
 1. [Project Overview](#project-overview)
-2. [Dataset Description](#dataset-description)
-3. [Fairness Objective](#fairness-objective)
-4. [Folder Structure](#folder-structure)
-5. [Pipeline Workflow](#pipeline-workflow)
+2. [Flowchart](#flowchart)
+3. [Dataset Description](#dataset-description)
+4. [Fairness Objective](#fairness-objective)
+5. [Folder Structure](#folder-structure)
+6. [Pipeline Workflow](#pipeline-workflow)
+7. [References](#references)
 
 ---
 
@@ -24,7 +26,8 @@ This project investigates algorithmic fairness in automated loan approval system
 The project is structured for clean collaboration between **3 contributors** and follows reproducible ML engineering practices.
 
 ---
-
+## Flowchart
+![Pipeline](photo.png)
 ## Dataset Description
 
 | Attribute | Details |
@@ -34,8 +37,6 @@ The project is structured for clean collaboration between **3 contributors** and
 | **Key Features** | Credit score, loan amount, income, employment type, repayment history, LTV ratio, bureau enquiries, etc. |
 | **Protected Attributes** | Gender, Age Group, Caste Category, Region |
 | **Format** | CSV / Excel |
-
-> ⚠️ **The dataset is NOT included in this repository.** Place the raw file(s) inside `data/raw/` on your local machine. See [Running the Pipeline](#running-the-pipeline) for the expected filename.
 
 ---
 
@@ -125,4 +126,3 @@ src/fairness/fairness_mitigation.py
 - Hardt, Price & Srebro (2016). *Equality of Opportunity in Supervised Learning*. NeurIPS.
 
 
-## flowchart
