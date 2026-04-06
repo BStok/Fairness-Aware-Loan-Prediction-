@@ -10,10 +10,6 @@
 3. [Fairness Objective](#fairness-objective)
 4. [Folder Structure](#folder-structure)
 5. [Pipeline Workflow](#pipeline-workflow)
-6. [Setup & Installation](#setup--installation)
-7. [Running the Pipeline](#running-the-pipeline)
-8. [Team Collaboration Notes](#team-collaboration-notes)
-9. [References](#references)
 
 ---
 
@@ -121,85 +117,12 @@ src/fairness/fairness_mitigation.py
 
 ---
 
-## Setup & Installation
-
-### Prerequisites
-- Python 3.9+
-- `pip`
-
-### Steps
-
-```bash
-# 1. Clone the repository
-git clone https://github.com/<your-org>/fairness-aware-loan-approval.git
-cd fairness-aware-loan-approval
-
-# 2. (Recommended) Create a virtual environment
-python -m venv .venv
-source .venv/bin/activate       # Windows: .venv\Scripts\activate
-
-# 3. Install dependencies
-pip install -r requirements.txt
-
-# 4. Place your dataset
-cp /path/to/your/loan_data.csv data/raw/loan_data.csv
-```
-
----
-
-## Running the Pipeline
-
-Execute scripts in order from the **project root**:
-
-```bash
-# Step 1 — Clean data
-python src/data_processing/clean_data.py
-
-# Step 2 — Feature selection
-python src/data_processing/feature_selection.py
-
-# Step 3 — Train baseline models
-python src/modeling/train_baseline_models.py
-
-# Step 4 — Fairness audit
-python src/fairness/fairness_audit.py
-
-# Step 5 — Fairness mitigation
-python src/fairness/fairness_mitigation.py
-```
-
-To run the exploratory notebook:
-
-```bash
-jupyter notebook notebooks/01_data_exploration.ipynb
-```
-
-To run unit tests:
-
-```bash
-pytest tests/
-```
-
----
-
-## Team Collaboration Notes
-
-| Contributor | Suggested Ownership |
-|---|---|
-| Member 1 | `src/data_processing/` + `notebooks/` |
-| Member 2 | `src/modeling/` + `tests/` |
-| Member 3 | `src/fairness/` + `report/` |
-
-- Work on **feature branches**: `git checkout -b feature/<your-task>`
-- Open a **pull request** into `main`; require at least **1 reviewer approval**.
-- Never commit data files — `.gitignore` enforces this.
-- Pin dependency versions in `requirements.txt` before merging to `main`.
-
----
-
 ## References
 
 - Fairlearn documentation: https://fairlearn.org
 - CIBIL: https://www.cibil.com
 - Bird et al. (2020). *Fairlearn: A toolkit for assessing and improving fairness in AI*. Microsoft Research.
 - Hardt, Price & Srebro (2016). *Equality of Opportunity in Supervised Learning*. NeurIPS.
+
+
+## flowchart
